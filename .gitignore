@@ -1,0 +1,33 @@
+# Xcode / build output
+build/
+DerivedData/
+*.log
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.ipa
+*.dSYM
+*.dSYM.zip
+.swiftpm/
+.build/
+
+# Local config & secrets — never commit
+Config/Local.xcconfig
+*.p8
+*.p12
+*.cer
+*.mobileprovision
+*.provisionprofile
+.env
+.env.*
+secrets/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+__pycache__/
+.pytest_cache/
+
+# Vendored binaries (rebuild with tools/build_libbox.sh)
+Vendor/*.xcframework/
