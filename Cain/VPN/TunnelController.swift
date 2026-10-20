@@ -94,8 +94,13 @@ final class TunnelController: ObservableObject {
     }
 
     private func refresh() {
+        let previous = status
         status = manager?.connection.status ?? .invalid
         connectedSince = manager?.connection.connectedDate
+        // Tell the box about real transitions, not about the first look after launch.
+        if status != previous, previous != .invalid, [.connected, .disconnected].contains(status) {
+            VPNEvents.post(word: statusWord, profile: store.selected)
+        }
     }
 
     /// Starts the tunnel with `profile` (or the selected one). Returns once it is on, or throws.

@@ -4,6 +4,9 @@ import SwiftUI
 /// One screen: the tunnel's state, the profiles, the newest log lines. Boring Box look.
 struct HomeView: View {
     @EnvironmentObject private var tunnel: TunnelController
+    @State private var status = AppStatus.shared
+    @State private var showSettings = false
+    @State private var polling = false
     @State private var profiles: [ProfileStore.Info] = []
     @State private var selected: String?
     @State private var logLines: [String] = []
@@ -39,6 +42,36 @@ struct HomeView: View {
                 .boxRows()
 
                 Section {
+                    HStack(spacing: 10) {
+                        StatusSquare(state: status.connection.isHealthy ? .done
+                            : status.connection == .connecting ? .running : .stale)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(status.connection.label).font(Theme.mono(.caption))
+                            Text(status.lastPollMessage).font(Theme.mono(.caption2)).foregroundStyle(Theme.dim)
+                        }
+                        Spacer()
+                        Button(polling ? "Polling…" : "Poll now", action: pollNow)
+                            .buttonStyle(.box())
+                            .disabled(polling)
+                    }
+                } header: {
+                    Text("Box · 盒子").boxLabel()
+                }
+                .boxRows()
+
+                Section {
+                    if status.activity.isEmpty {
+                        Text("Nothing from the box yet.").font(.footnote).foregroundStyle(Theme.dim)
+                    }
+                    ForEach(status.activity.prefix(20)) { entry in
+                        activityRow(entry)
+                    }
+                } header: {
+                    Text("Activity · 动态").boxLabel()
+                }
+                .boxRows()
+
+                Section {
                     if logLines.isEmpty {
                         Text("Nothing logged yet.").font(.footnote).foregroundStyle(Theme.dim)
                     }
@@ -54,6 +87,11 @@ struct HomeView: View {
             .boxList()
             .navigationTitle("该隐")
             .toolbarBackground(Theme.background, for: .navigationBar)
+            .toolbar {
+                Button("Settings") { showSettings = true }
+                    .buttonStyle(.box())
+            }
+            .sheet(isPresented: $showSettings) { SettingsView() }
         }
         .onAppear(perform: reload)
         .onReceive(refreshTimer) { _ in reload() }
@@ -77,11 +115,9 @@ struct HomeView: View {
         .padding(.vertical, 4)
     }
 
-    /// "VPN ON · PROFILE home" — the same words the status feed uses.
+    /// "VPN on · profile home" — the same line as the activity feed, the box's vpn events and every vpn.* note.
     private var headline: String {
-        let word = tunnel.statusWord.uppercased()
-        guard let selected else { return "VPN \(word)" }
-        return "VPN \(word) · \(selected)"
+        VPNStatusLine.text(word: tunnel.statusWord, profile: selected)
     }
 
     private var squareState: StatusSquare.State {
@@ -106,6 +142,34 @@ struct HomeView: View {
             }
         }
         .foregroundStyle(Theme.text)
+    }
+
+    private func activityRow(_ entry: ActivityEntry) -> some View {
+        HStack(alignment: .top, spacing: 10) {
+            StatusSquare(state: entry.status == .done ? .done : entry.status == .running ? .running : .failed)
+                .padding(.top, 4)
+            VStack(alignment: .leading, spacing: 2) {
+                HStack {
+                    Text(entry.capability).font(Theme.mono(.caption, weight: .semibold))
+                    Spacer()
+                    Text(entry.time.formatted(date: .omitted, time: .shortened))
+                        .font(Theme.mono(.caption2)).foregroundStyle(Theme.dim)
+                }
+                Text(entry.note).font(.footnote)
+                if !entry.summary.isEmpty {
+                    Text(entry.summary).font(Theme.mono(.caption2)).foregroundStyle(Theme.dim).lineLimit(2)
+                }
+            }
+        }
+    }
+
+    private func pollNow() {
+        polling = true
+        Task {
+            await CainRuntime.shared.pollNow()
+            polling = false
+            reload()
+        }
     }
 
     private func reload() {

@@ -43,6 +43,12 @@ targets:
         # Shared with the tunnel extension: profiles, selected profile, tunnel log.
         CainAppGroup: group.$(CAIN_BUNDLE_ID)
         CainTunnelBundleID: $(CAIN_BUNDLE_ID).ext
+        # The box reaches Cain while it is open (long poll) and on BG app refresh.
+        UIBackgroundModes: [fetch]
+        BGTaskSchedulerPermittedIdentifiers:
+          - $(PRODUCT_BUNDLE_IDENTIFIER).refresh
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
     postBuildScripts:
       - name: Build number = git commit count
         basedOnDependencyAnalysis: false
@@ -94,8 +100,24 @@ targets:
       properties:
         com.apple.developer.networking.networkextension: [packet-tunnel-provider]
         com.apple.security.application-groups: [group.$(CAIN_BUNDLE_ID)]
+  CainTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [CainTests]
+    dependencies:
+      - target: Cain
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: $(CAIN_BUNDLE_ID).tests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Cain.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cain"
+        BUNDLE_LOADER: "$(TEST_HOST)"
 schemes:
   Cain:
     build:
       targets:
         Cain: all
+        CainTests: [test]
+    test:
+      targets: [CainTests]
+      gatherCoverageData: false

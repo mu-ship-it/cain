@@ -1,0 +1,141 @@
+# SYNTHETIC test config for tools/clash2singbox.py. Every server, key and id here is made up:
+# reserved example domains (RFC 2606), documentation IPs (RFC 5737), dummy keys.
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  nameserver:
+    - https://dns.example.net/dns-query
+  fallback:
+    - tls://192.0.2.53
+
+proxies:
+  - {name: "🇭🇰 HK ss", type: ss, server: hk.example.com, port: 8388, cipher: aes-256-gcm, password: "example-password", plugin: obfs, plugin-opts: {mode: http, host: cdn.example.org}}
+  - name: 日本 vmess
+    type: vmess
+    server: jp.example.com
+    port: 443
+    uuid: 00000000-0000-4000-8000-000000000001
+    alterId: 0
+    cipher: auto
+    tls: true
+    servername: jp.example.com
+    network: ws
+    ws-opts:
+      path: /ray   # trailing comment
+      headers:
+        Host: jp.example.com
+  - name: 'US vless'
+    type: vless
+    server: 198.51.100.10
+    port: 443
+    uuid: 00000000-0000-4000-8000-000000000002
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.example.org
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: QUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVpbXF1eX2A
+      short-id: "0123abcd"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: grpcsvc
+  - name: SG trojan
+    type: trojan
+    server: sg.example.com
+    port: 443
+    password: example-password
+    sni: sg.example.com
+    skip-cert-verify: true
+    alpn: [h2, http/1.1]
+  - name: TW hy2
+    type: hysteria2
+    server: 203.0.113.20
+    port: 443
+    password: example-password
+    up: "50 Mbps"
+    down: 200 Mbps
+    obfs: salamander
+    obfs-password: example-obfs
+    sni: tw.example.com
+  - name: KR tuic
+    type: tuic
+    server: kr.example.com
+    port: 443
+    uuid: 00000000-0000-4000-8000-000000000003
+    password: example-password
+    congestion-controller: bbr
+    alpn: [h3]
+  - {name: home socks, type: socks5, server: 192.0.2.1, port: 1080, username: user, password: example-password}
+  - name: WG
+    type: wireguard
+    server: 203.0.113.30
+    port: 51820
+    ip: 10.0.0.2
+    private-key: AQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyA=
+    public-key: ISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0A=
+    pre-shared-key: YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXp7fH1+f4A=
+    reserved: [1, 2, 3]
+    mtu: 1280
+  - {name: old snell, type: snell, server: snell.example.com, port: 443, psk: example}
+
+group-base: &base
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies:
+      - Auto
+      - 🇭🇰 HK ss
+      - 日本 vmess
+      - US vless
+      - old snell
+      - DIRECT
+  - name: Auto
+    <<: *base
+    type: url-test
+    tolerance: 50
+    proxies: [SG trojan, TW hy2, KR tuic]
+  - name: Backup
+    <<: *base
+    type: fallback
+    proxies: [WG, home socks]
+  - name: Ads
+    type: select
+    proxies: [REJECT, DIRECT]
+
+rule-providers:
+  streaming:
+    type: http
+    behavior: domain
+    url: https://rules.example.com/streaming.srs
+    interval: 86400
+  clash-list:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://rules.example.com/clash-list.yaml
+    path: ./rules/clash-list.yaml
+
+rules:
+  - DOMAIN-SUFFIX,ads.example.com,REJECT
+  - DOMAIN-SUFFIX,example.org,Proxy
+  - DOMAIN-SUFFIX,example.net,Proxy
+  - DOMAIN-KEYWORD,examplekeyword,Proxy
+  - DOMAIN,api.example.com,Auto
+  - IP-CIDR,198.51.100.0/24,DIRECT,no-resolve
+  - IP-CIDR6,2001:db8::/32,DIRECT
+  - DST-PORT,22,DIRECT
+  - RULE-SET,streaming,Backup
+  - RULE-SET,clash-list,Proxy
+  - GEOIP,LAN,DIRECT
+  - GEOSITE,CN,DIRECT
+  - GEOIP,CN,DIRECT
+  - AND,((DOMAIN,a.example.com),(NETWORK,UDP)),REJECT
+  - MATCH,Proxy
