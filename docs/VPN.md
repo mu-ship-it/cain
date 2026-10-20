@@ -204,13 +204,11 @@ Waits on a paid Apple Developer Program membership:
    (with `"select": true`) → `vpn.start`. Check `vpn.log.tail`.
 5. **TestFlight**: in App Store Connect create the app (`dev.boringbox.cain`), archive in Xcode
    (Product → Archive) and upload; internal testing needs no review. Before any wider release,
-   settle the license question in NOTICE (GPL-3.0 combined work).
 6. Worth doing then: silent push (APNs, also paid-only) so a job reaches Cain within seconds
    with the app closed, as Bridge does; and measure the extension's memory with the real
    profile (iOS's packet-tunnel limit is about 50 MB).
 
 ## License
 
-sing-box and sing-box-for-apple are GPL-3.0-or-later; Cain's own code is MIT. A built Cain
-(the extension links Libbox) is a combined work distributed under GPL-3.0 terms. Details in
+sing-box and sing-box-for-apple are GPL-3.0-or-later, and so is Cain as a whole (ruled 2026-10-20). Details in
 [NOTICE](../NOTICE).

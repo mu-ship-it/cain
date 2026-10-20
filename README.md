@@ -75,5 +75,5 @@ Each copied file says so in its first line. Not a shared package yet: the two ap
 
 ## License
 
-Cain's own code is MIT, see [LICENSE](LICENSE). The built app links sing-box (GPL-3.0),
-so a built Cain is distributed under GPL-3.0 terms; see [NOTICE](NOTICE).
+GPL-3.0-or-later, see [LICENSE](LICENSE). Cain links sing-box (GPL-3.0-or-later) and keeps the
+same license as a whole; third-party notices in [NOTICE](NOTICE).

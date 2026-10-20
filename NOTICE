@@ -1,5 +1,5 @@
 Cain (该隐)
-Copyright (c) 2026 Mu Yin. Cain's own source code is under the MIT License (LICENSE).
+Copyright (c) 2026 Mu Yin. Cain is free software under the GNU GPL-3.0-or-later (LICENSE).
 
 Third-party code
 ----------------
@@ -8,11 +8,10 @@ GPL-3.0-or-later, with the additional term that no derivative work may use the n
 "sing-box" or imply association with it without prior consent.
   - Linked into the CainExt packet-tunnel extension as Vendor/Libbox.xcframework, which is
     built from sing-box's source by tools/build_libbox.sh (not committed).
-  - Because the extension links GPL-3.0 code, a BUILT Cain app (app + extension) is a combined
-    work that may only be distributed under GPL-3.0 terms: with its complete corresponding
-    source, which this repository plus the pinned sing-box tag provide. MIT is GPL-compatible,
-    so Cain's MIT-licensed files can be part of that combined work. Cain does not use the
-    sing-box name for itself.
+  - Cain is licensed GPL-3.0-or-later as a whole, so the built app (app + extension) is
+    distributed under the same terms as the sing-box code it links, with complete corresponding
+    source (this repository plus the pinned sing-box tag). Cain does not use the sing-box name
+    for itself.
 
 sing-box-for-apple (https://github.com/SagerNet/sing-box-for-apple), Copyright (C) 2022 by
 nekohasekai, GPL-3.0-or-later.
@@ -22,4 +21,5 @@ nekohasekai, GPL-3.0-or-later.
     against Libbox's generated headers; no code was copied.
 
 Bridge (phonebridge), Copyright (c) 2026 Mu Yin, MIT.
-  - Files copied from it are listed in README.md ("Copied from Bridge").
+  - Files copied from it are listed in README.md ("Copied from Bridge"); within Cain they are
+    relicensed by their author under GPL-3.0-or-later.
