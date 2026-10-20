@@ -1,0 +1,630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00D3D595319A58B31DF2772C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A192EA1C27AAD8F9845B4C /* NetworkExtension.framework */; };
+		013B6F676869241CACB957AC /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A192EA1C27AAD8F9845B4C /* NetworkExtension.framework */; };
+		034E44C663A6400822DA4282 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE54C46D65274860C037B4B /* HomeView.swift */; };
+		08DEFA044BD593985A573AEE /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0577278EE019C1896EDAC42 /* ProfileStore.swift */; };
+		2CA0F31B18C785D4B1EEC756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74BDB8B1384E3641CC0C30E4 /* Assets.xcassets */; };
+		3A31480F379628634A56C314 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11328B81EDEE24C642C735 /* AppGroup.swift */; };
+		4C5A86D5786014295C1E4DFD /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0952DF3DC11B56946BC790 /* PacketTunnelProvider.swift */; };
+		5E30E5DE37C858AB33538A07 /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0577278EE019C1896EDAC42 /* ProfileStore.swift */; };
+		75D2FC221A96C5E10AF7A55F /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11328B81EDEE24C642C735 /* AppGroup.swift */; };
+		773DF8727FC4056D5655FD27 /* TunnelLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E55D848A80C1AAEA6C7E7D6 /* TunnelLog.swift */; };
+		87D97B9BD66B06780D18B5DC /* PlatformInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD346B3E9A55E221683CFA /* PlatformInterface.swift */; };
+		8B89192EA156E8F8C5F5671C /* TunnelConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118CAE5ACB14026BA4D894B7 /* TunnelConfig.swift */; };
+		8DD14D5DF3A99F2B98B3252C /* CainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6DF9EAA22F24AD92C979A3 /* CainApp.swift */; };
+		930DDBDB2943DFC25880BFE0 /* TunnelConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118CAE5ACB14026BA4D894B7 /* TunnelConfig.swift */; };
+		976D3EE97B0D22FCD46CE91C /* TunnelLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E55D848A80C1AAEA6C7E7D6 /* TunnelLog.swift */; };
+		A013D912E381BD28B9BC0E40 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299C1A19D4642A888366C6D /* Theme.swift */; };
+		A9A25097D275EAD57AF78AAE /* CainExt.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D001BAB79F1E584D63B0FE8E /* CainExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B88D924B3919704263F5C0D3 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA74973BD25148247A75EE /* libresolv.tbd */; };
+		B981A1F9593BFFD9B9969E25 /* TunnelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C37F4FC635A80B4B43BFA /* TunnelController.swift */; };
+		BB1DE2D57239FB9901DE40AD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299C1A19D4642A888366C6D /* Theme.swift */; };
+		EC34627F93C27E7A59410C33 /* Libbox.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C90B45813C76336AAC03C6A /* Libbox.xcframework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE436F13B54163A1168ECAE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC3F2D5E1819C0E4670AAB4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC70F68A08A9355C9569BE27;
+			remoteInfo = CainExt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D9C0B4D8C55B41F9263D21F4 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A9A25097D275EAD57AF78AAE /* CainExt.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		02EA74973BD25148247A75EE /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		08CD346B3E9A55E221683CFA /* PlatformInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformInterface.swift; sourceTree = "<group>"; };
+		0A2BE957532AD5300A16CF3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		118CAE5ACB14026BA4D894B7 /* TunnelConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelConfig.swift; sourceTree = "<group>"; };
+		3C90B45813C76336AAC03C6A /* Libbox.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Libbox.xcframework; path = Vendor/Libbox.xcframework; sourceTree = "<group>"; };
+		4E11328B81EDEE24C642C735 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		5C0952DF3DC11B56946BC790 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		74BDB8B1384E3641CC0C30E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E55D848A80C1AAEA6C7E7D6 /* TunnelLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelLog.swift; sourceTree = "<group>"; };
+		92D98F52A6F327A09774C471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9DC51B088737FA12798BB6CB /* Cain.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Cain.xcconfig; sourceTree = "<group>"; };
+		A66C37F4FC635A80B4B43BFA /* TunnelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelController.swift; sourceTree = "<group>"; };
+		B6504BB73F757D56518CA19A /* Cain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cain.entitlements; sourceTree = "<group>"; };
+		C0577278EE019C1896EDAC42 /* ProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
+		C299C1A19D4642A888366C6D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		CBE54C46D65274860C037B4B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CC6DF9EAA22F24AD92C979A3 /* CainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CainApp.swift; sourceTree = "<group>"; };
+		D001BAB79F1E584D63B0FE8E /* CainExt.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CainExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2A192EA1C27AAD8F9845B4C /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		E787A01CC3D00732A843CB99 /* Cain.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Cain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA639CB498F25AA91D32C7AC /* CainExt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CainExt.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		581534CA945ADFB9261BB3BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00D3D595319A58B31DF2772C /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB49AB06A3187B5EB081B33D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC34627F93C27E7A59410C33 /* Libbox.xcframework in Frameworks */,
+				013B6F676869241CACB957AC /* NetworkExtension.framework in Frameworks */,
+				B88D924B3919704263F5C0D3 /* libresolv.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0059A829C7F764E7C5E0E017 /* VPN */ = {
+			isa = PBXGroup;
+			children = (
+				A66C37F4FC635A80B4B43BFA /* TunnelController.swift */,
+			);
+			path = VPN;
+			sourceTree = "<group>";
+		};
+		22C7A1EC22E03756FACD8E73 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4E11328B81EDEE24C642C735 /* AppGroup.swift */,
+				C0577278EE019C1896EDAC42 /* ProfileStore.swift */,
+				C299C1A19D4642A888366C6D /* Theme.swift */,
+				118CAE5ACB14026BA4D894B7 /* TunnelConfig.swift */,
+				7E55D848A80C1AAEA6C7E7D6 /* TunnelLog.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		370B1AEF67D67602607FE42A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9DC51B088737FA12798BB6CB /* Cain.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		3749B58096D473321468F235 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CBE54C46D65274860C037B4B /* HomeView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		50860FC5AC3CD30D01A43472 /* CainExt */ = {
+			isa = PBXGroup;
+			children = (
+				EA639CB498F25AA91D32C7AC /* CainExt.entitlements */,
+				0A2BE957532AD5300A16CF3B /* Info.plist */,
+				5C0952DF3DC11B56946BC790 /* PacketTunnelProvider.swift */,
+				08CD346B3E9A55E221683CFA /* PlatformInterface.swift */,
+			);
+			path = CainExt;
+			sourceTree = "<group>";
+		};
+		525B572000D87842E4877AC2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CC6DF9EAA22F24AD92C979A3 /* CainApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		89AB098D6850D1F9ACF5BD1D /* Cain */ = {
+			isa = PBXGroup;
+			children = (
+				74BDB8B1384E3641CC0C30E4 /* Assets.xcassets */,
+				B6504BB73F757D56518CA19A /* Cain.entitlements */,
+				92D98F52A6F327A09774C471 /* Info.plist */,
+				525B572000D87842E4877AC2 /* App */,
+				3749B58096D473321468F235 /* UI */,
+				0059A829C7F764E7C5E0E017 /* VPN */,
+			);
+			path = Cain;
+			sourceTree = "<group>";
+		};
+		A36D98223AD19DBB4F566740 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E787A01CC3D00732A843CB99 /* Cain.app */,
+				D001BAB79F1E584D63B0FE8E /* CainExt.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5E5C31B49C58F426AF75950 = {
+			isa = PBXGroup;
+			children = (
+				89AB098D6850D1F9ACF5BD1D /* Cain */,
+				50860FC5AC3CD30D01A43472 /* CainExt */,
+				370B1AEF67D67602607FE42A /* Config */,
+				22C7A1EC22E03756FACD8E73 /* Shared */,
+				D52F81090D60C9DFAEE7DF7A /* Frameworks */,
+				A36D98223AD19DBB4F566740 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D52F81090D60C9DFAEE7DF7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C90B45813C76336AAC03C6A /* Libbox.xcframework */,
+				02EA74973BD25148247A75EE /* libresolv.tbd */,
+				E2A192EA1C27AAD8F9845B4C /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BF74D7F793F104A6D52D4B9 /* Cain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC2FAE791F4147D0F92D93FF /* Build configuration list for PBXNativeTarget "Cain" */;
+			buildPhases = (
+				C12C66711E0F88E3AE7F3484 /* Sources */,
+				C2AE47A210E893362C2C844F /* Resources */,
+				581534CA945ADFB9261BB3BB /* Frameworks */,
+				D9C0B4D8C55B41F9263D21F4 /* Embed Foundation Extensions */,
+				64C02B837F0AA7FE79870205 /* Build number = git commit count */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B73634CEAC740F4FB0A329CC /* PBXTargetDependency */,
+			);
+			name = Cain;
+			packageProductDependencies = (
+			);
+			productName = Cain;
+			productReference = E787A01CC3D00732A843CB99 /* Cain.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC70F68A08A9355C9569BE27 /* CainExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FE83A2228E83EC79C5AAC2B /* Build configuration list for PBXNativeTarget "CainExt" */;
+			buildPhases = (
+				A582412BC4615F161E1AE0F2 /* Sources */,
+				BB49AB06A3187B5EB081B33D /* Frameworks */,
+				113564CC39DB8A15F86BE7D6 /* Build number = git commit count */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CainExt;
+			packageProductDependencies = (
+			);
+			productName = CainExt;
+			productReference = D001BAB79F1E584D63B0FE8E /* CainExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC3F2D5E1819C0E4670AAB4A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					9BF74D7F793F104A6D52D4B9 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					DC70F68A08A9355C9569BE27 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 631560957272C956A1D5B21D /* Build configuration list for PBXProject "Cain" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A5E5C31B49C58F426AF75950;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A36D98223AD19DBB4F566740 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BF74D7F793F104A6D52D4B9 /* Cain */,
+				DC70F68A08A9355C9569BE27 /* CainExt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2AE47A210E893362C2C844F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA0F31B18C785D4B1EEC756 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		113564CC39DB8A15F86BE7D6 /* Build number = git commit count */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(TARGET_BUILD_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "Build number = git commit count";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "count=$(git -C \"$SRCROOT\" rev-list --count HEAD 2>/dev/null || echo \"$CURRENT_PROJECT_VERSION\")\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $count\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n";
+		};
+		64C02B837F0AA7FE79870205 /* Build number = git commit count */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(TARGET_BUILD_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "Build number = git commit count";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "count=$(git -C \"$SRCROOT\" rev-list --count HEAD 2>/dev/null || echo \"$CURRENT_PROJECT_VERSION\")\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $count\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A582412BC4615F161E1AE0F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A31480F379628634A56C314 /* AppGroup.swift in Sources */,
+				4C5A86D5786014295C1E4DFD /* PacketTunnelProvider.swift in Sources */,
+				87D97B9BD66B06780D18B5DC /* PlatformInterface.swift in Sources */,
+				08DEFA044BD593985A573AEE /* ProfileStore.swift in Sources */,
+				A013D912E381BD28B9BC0E40 /* Theme.swift in Sources */,
+				8B89192EA156E8F8C5F5671C /* TunnelConfig.swift in Sources */,
+				773DF8727FC4056D5655FD27 /* TunnelLog.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C12C66711E0F88E3AE7F3484 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75D2FC221A96C5E10AF7A55F /* AppGroup.swift in Sources */,
+				8DD14D5DF3A99F2B98B3252C /* CainApp.swift in Sources */,
+				034E44C663A6400822DA4282 /* HomeView.swift in Sources */,
+				5E30E5DE37C858AB33538A07 /* ProfileStore.swift in Sources */,
+				BB1DE2D57239FB9901DE40AD /* Theme.swift in Sources */,
+				930DDBDB2943DFC25880BFE0 /* TunnelConfig.swift in Sources */,
+				B981A1F9593BFFD9B9969E25 /* TunnelController.swift in Sources */,
+				976D3EE97B0D22FCD46CE91C /* TunnelLog.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B73634CEAC740F4FB0A329CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC70F68A08A9355C9569BE27 /* CainExt */;
+			targetProxy = BE436F13B54163A1168ECAE5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02C24B1B9120617217A9F2CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DC51B088737FA12798BB6CB /* Cain.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 0.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		558656BB848646FE6CCB2AFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CainExt/CainExt.entitlements;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"Vendor\"",
+				);
+				INFOPLIST_FILE = CainExt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "该隐";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAIN_BUNDLE_ID).ext";
+				PRODUCT_NAME = CainExt;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		C9D29056AD177EC4216A4709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CainExt/CainExt.entitlements;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"Vendor\"",
+				);
+				INFOPLIST_FILE = CainExt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "该隐";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAIN_BUNDLE_ID).ext";
+				PRODUCT_NAME = CainExt;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DBE05D5C7A6D4EC5AC62B19D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cain/Cain.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = Cain/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "该隐";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAIN_BUNDLE_ID)";
+				PRODUCT_NAME = Cain;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F575BEABD3B61B26F5EA806F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cain/Cain.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = Cain/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "该隐";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CAIN_BUNDLE_ID)";
+				PRODUCT_NAME = Cain;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FE959E67A6AEAECC420F7B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DC51B088737FA12798BB6CB /* Cain.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 0.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FE83A2228E83EC79C5AAC2B /* Build configuration list for PBXNativeTarget "CainExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9D29056AD177EC4216A4709 /* Debug */,
+				558656BB848646FE6CCB2AFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		631560957272C956A1D5B21D /* Build configuration list for PBXProject "Cain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE959E67A6AEAECC420F7B75 /* Debug */,
+				02C24B1B9120617217A9F2CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EC2FAE791F4147D0F92D93FF /* Build configuration list for PBXNativeTarget "Cain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F575BEABD3B61B26F5EA806F /* Debug */,
+				DBE05D5C7A6D4EC5AC62B19D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CC3F2D5E1819C0E4670AAB4A /* Project object */;
+}

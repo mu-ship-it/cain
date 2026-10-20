@@ -1,0 +1,5 @@
+// Committed defaults. Your team id goes in Config/Local.xcconfig (gitignored), see Local.xcconfig.example.
+CAIN_BUNDLE_ID = dev.boringbox.cain
+DEVELOPMENT_TEAM =
+
+#include? "Local.xcconfig"

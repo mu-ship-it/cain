@@ -1,0 +1,5 @@
+// Copy to Config/Local.xcconfig (gitignored) and fill in. Then: xcodegen generate
+// A device build needs a PAID team: the Network Extension entitlement is not available to free accounts.
+DEVELOPMENT_TEAM = ABCDE12345
+// Only if you fork it under your own ids (the App Group follows: group.<bundle id>).
+// CAIN_BUNDLE_ID = com.yourname.cain

@@ -1,0 +1,25 @@
+Cain (该隐)
+Copyright (c) 2026 Mu Yin. Cain's own source code is under the MIT License (LICENSE).
+
+Third-party code
+----------------
+sing-box (https://github.com/SagerNet/sing-box), Copyright (C) 2022 by nekohasekai,
+GPL-3.0-or-later, with the additional term that no derivative work may use the name
+"sing-box" or imply association with it without prior consent.
+  - Linked into the CainExt packet-tunnel extension as Vendor/Libbox.xcframework, which is
+    built from sing-box's source by tools/build_libbox.sh (not committed).
+  - Because the extension links GPL-3.0 code, a BUILT Cain app (app + extension) is a combined
+    work that may only be distributed under GPL-3.0 terms: with its complete corresponding
+    source, which this repository plus the pinned sing-box tag provide. MIT is GPL-compatible,
+    so Cain's MIT-licensed files can be part of that combined work. Cain does not use the
+    sing-box name for itself.
+
+sing-box-for-apple (https://github.com/SagerNet/sing-box-for-apple), Copyright (C) 2022 by
+nekohasekai, GPL-3.0-or-later.
+  - CainExt/PacketTunnelProvider.swift and CainExt/PlatformInterface.swift follow the start
+    sequence and the tun / interface-monitor approach of its Library/Network/ExtensionProvider.swift
+    and ExtensionPlatformInterface.swift (read at commit ecbb9ff). They were written fresh
+    against Libbox's generated headers; no code was copied.
+
+Bridge (phonebridge), Copyright (c) 2026 Mu Yin, MIT.
+  - Files copied from it are listed in README.md ("Copied from Bridge").
